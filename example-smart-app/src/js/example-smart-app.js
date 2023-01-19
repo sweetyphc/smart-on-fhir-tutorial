@@ -23,6 +23,18 @@
                   });
 
         $.when(pt, obv).fail(onError);
+        
+        var dig = smart.patient.api.fetchAll({
+                    type: 'DiagnosticReport',
+                    query: {
+                      code: {
+                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
+                              'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
+                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4']
+                      }
+                    }
+                  });
+        $.when(pt, dig).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
