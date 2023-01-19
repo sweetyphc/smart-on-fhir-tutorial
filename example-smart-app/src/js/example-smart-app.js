@@ -35,6 +35,17 @@
                     }
                   });
         $.when(pt, dig).fail(onError);
+        
+          $.when(pt, dig).done(function(patient, obv) {
+          console.log(dig);
+          var byCodes = smart.byCodes(dig, 'code');
+          console.log(byCodes);
+            
+        });
+      } else {
+        onError();
+      }
+    }
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
