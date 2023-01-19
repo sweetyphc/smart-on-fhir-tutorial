@@ -36,16 +36,12 @@
                   });
         $.when(pt, dig).fail(onError);
         
-          $.when(pt, dig).done(function(patient, dig) {
-          console.log(dig);
-          var byCodes = smart.byCodes(dig, 'code');
-          console.log(byCodes);
-            
+        $.when(pt, dig).done(function(patient, dig) {
+        console.log(dig);
+        var byCodes = smart.byCodes(dig, 'code');
+        console.log(byCodes);
         });
-      } else {
-        onError();
-      }
-    }
+     
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
