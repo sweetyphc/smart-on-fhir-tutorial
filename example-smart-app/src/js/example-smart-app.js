@@ -36,7 +36,7 @@
                   });
         $.when(pt, dig).fail(onError);
         
-          $.when(pt, dig).done(function(patient, obv) {
+          $.when(pt, dig).done(function(patient, dig) {
           console.log(dig);
           var byCodes = smart.byCodes(dig, 'code');
           console.log(byCodes);
