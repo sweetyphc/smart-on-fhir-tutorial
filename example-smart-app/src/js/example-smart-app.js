@@ -79,6 +79,9 @@
         $.when(pt, dig).done(function(patient, dig) {
           var byCodes = smart.byCodes(dig, 'code');
           
+          console.log(byCodes);
+          var test = byCodes;
+          
         });
       } else {
         onError();
